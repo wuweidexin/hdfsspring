@@ -1,6 +1,5 @@
 ﻿#!/bin/bash
 homePath=`pwd`
-pidFile="$homePath/pid"
 cd $homePath
 startStop=$1
 function start(){
