@@ -19,7 +19,10 @@ public class HdfsController {
 			hdfso.mkdir();
 		} else if(method.equals("deldir")) {
 			hdfso.del();
-		} 
+		} else if(method.equals("upload")) {
+			hdfso.upload();
+		}
+		
 		return "success";
 	}
 }
