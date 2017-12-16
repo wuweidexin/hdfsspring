@@ -17,7 +17,9 @@ public class HdfsController {
 		HdfsOperation hdfso = HdfsOperation.getInstace();
 		if(method.equals("mkdir")) {
 			hdfso.mkdir();
-		}
+		} else if(method.equals("deldir")) {
+			hdfso.del();
+		} 
 		return "success";
 	}
 }
