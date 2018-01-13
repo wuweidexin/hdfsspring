@@ -23,6 +23,7 @@ import org.apache.hadoop.mapred.TextOutputFormat;
 public class WordCount {
 
 	private static WordCount instance = new WordCount();
+	String rootpath = "hdfs://localhost:9000/";
 
 	private WordCount() {
 
@@ -75,8 +76,8 @@ public class WordCount {
 		conf.setInputFormat(TextInputFormat.class);
 		conf.setOutputFormat(TextOutputFormat.class);
 
-		FileInputFormat.setInputPaths(conf, new Path(input));
-		FileOutputFormat.setOutputPath(conf, new Path(output));
+		FileInputFormat.setInputPaths(conf, new Path(rootpath+input));
+		FileOutputFormat.setOutputPath(conf, new Path(rootpath+output));
 		JobClient.runJob(conf);
 	}
 
